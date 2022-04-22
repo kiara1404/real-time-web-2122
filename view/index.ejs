@@ -1,0 +1,15 @@
+<%- include('includes/head.ejs') %>
+
+<main>
+    <section>
+        <h1>Chat</h1>
+        <p>Vul een gebruikersnaam in</p>
+
+        <form action="/chat" method="GET" id="username-form">
+            <input type="text" autocomplete="off" placeholder="Naam" required id="name" name="name">
+            <button type="submit"><span>Send</span></button>
+        </form>
+    </section>
+</main>
+
+<%- include('includes/footer.ejs') %>
