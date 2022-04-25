@@ -3,7 +3,7 @@
 
 ## 🔴 Live demo
 
-## 3 < concept
+## 3 < 1 concept
 For this course I had to think of three different ideas that implement realtime data with Socket.io and the use of an API.
 
 ### Guess the Marvel character ❓
