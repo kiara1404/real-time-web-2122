@@ -38,6 +38,7 @@ io.on('connection', (socket) => {
 
 
     socket.on('send-username', (username) => {
+        console.log(socket.username)
         socket.username = username;
     });
 
