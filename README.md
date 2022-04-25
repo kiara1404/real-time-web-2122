@@ -8,9 +8,11 @@ For this course I had to think of three different ideas that implement realtime 
 
 ### Guess the Marvel character ❓
 I found out that Marvel has their own API. I really wanted to make a game based on all the characters from the Marel Universe. This game will contain a chatbox where the users can communicate and send their answers.
+![](https://github.com/kiara1404/real-time-web-2122/blob/main/wiki/marvel.pdf)
 
 ### Yahtzee 🎲
 My first thought for this course was to make my all time favourite game, Yahtzee. I know there are/is API's for rolling dices.  
+![](https://github.com/kiara1404/real-time-web-2122/blob/main/wiki/yahtzee.pdf)
 
 ### Pesten (Dutch card game) ♠️♥️♣️♦️
 I knew that there was an API for decks for cards, so I thought it would be cool to replicate this Dutch card game. 
@@ -18,6 +20,7 @@ I knew that there was an API for decks for cards, so I thought it would be cool 
 * Every player gets zeven cards and all the leftover cards will be in the pile on the table.
 * The goal of the game is to lose your cards as soon as possible but there are certain rules when you can play a card away.
 
+![](https://github.com/kiara1404/real-time-web-2122/blob/main/wiki/pesten.pdf)
 ## 👩‍🏫 Installation
 
 ```
