@@ -1,48 +1,11 @@
 
 ## 📝 Concept
-                                      ┌───────────────────────────────┐
-                                      │ http(s)://gateway.marvel.com  │
-                                      └───────────────┬───────────────┘
-                                                      │
-     ┌──────────────────┬───────────────────┬─────────┴────────┬──────────────────┬───────────────────┐
-     │                  │                   │                  │                  │                   │
-     │                  │                   │                  │                  │                   │
-     │                  │                   │                  │                  │                   │
-┌────┴──────┐    ┌──────┴───────┐    ┌──────┴──────┐    ┌──────┴───────┐    ┌─────┴──────┐    ┌───────┴────┐
-│  COMICS   │    │ COMIC SERIES │    │    COMIC    │    │ COMIC EVENTS │    │ CHARACTERS │    │  CREATORS  │
-│           │    │              │    │   STORIES   │    │ & CROSSOVERS │    │            │    │            │
-└───────────┘    └──────────────┘    └─────────────┘    └──────────────┘    └─────┬──────┘    └────────────┘
-                                                                                  │
-                                                                                  │
-                                                                           ┌──────┴─────────┐
-                                                                           │                │
-                                                                           │ id             │
-                                                                           │ name           │
-                                                                           │ description    │
-                                                                           │ modified       │
-                                                                           │ thummbnail {   │
-                                                                           │      path      │
-                                                                           │      extension │
-                                                                           │ },             │
-                                                                           │ resourceURI    │
-                                                                           │ comics{..},    │
-                                                                           │ series{..},    │
-                                                                           │ stories{..},   │
-                                                                           │ events{..},    │
-                                                                           │ urls[..]       │
-                                                                           │                │
-                                                                           └───────┬────────┘
-                                                                                   │
-                                                                                   │
-                                                                                   │
-                                                                           ┌───────┴────────┐
-                                                                           │ name           │
-                                                                           │ path:          │
-                                                                           └────────────────┘
+
+## Data model
+<img src="wiki/datamodel.png">
 
 
 
-                                                                           
 ## 3 < 1 concept
 For this course I had to think of three different ideas that implement realtime data with Socket.io and the use of an API.
 
