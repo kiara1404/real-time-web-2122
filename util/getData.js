@@ -16,11 +16,11 @@ async function fetchData(req, res) {
         const data = await fetch(url)
         const response = await data.json()
         const result = response.data.results
-        // console.log(result)
+        console.log(result)
 
         let newData = result.map(item => item.name)
-        console.log(newData)
-        res.render('index', { data: result })
+        // console.log(newData)
+        res.render('index', { data: result[99] })
     }
     catch (err) {
         console.log(err)
