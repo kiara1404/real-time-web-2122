@@ -1,15 +1,14 @@
 <%- include('includes/head.ejs') %>
-
-
 <main>
-    <%- include('includes/imageBox.ejs') %>
+        <%- include('includes/imageBox.ejs') %>
     <section>
         <h1>Chat</h1>
-        <p>Vul een gebruikersnaam in</p>
-
-        <form action="/chat" method="GET" id="username-form">
-            <input type="text" autocomplete="off" placeholder="Naam" required id="name" name="name">
-            <button type="submit"><span>Send</span></button>
+        <ul></ul>
+        <p class="msg">A user has joined</p>
+        <p class=msg>A user has disconnected</p>
+        <form id="chat">
+            <input type="text" autocomplete="off">
+            <button><span>Send</span></button>
         </form>
     </section>
 </main>

@@ -8,15 +8,15 @@ const username = new URLSearchParams(window.location.search).get('name')
 
 
 //submit msg username
-if (window.location.pathname === '/') {
-    let usernameForm = document.querySelector('#username-form')
-    usernameForm.addEventListener('submit', () => {
-        usernameForm.submit()
-    })
+// if (window.location.pathname === '/') {
+//     let usernameForm = document.querySelector('#username-form')
+//     usernameForm.addEventListener('submit', () => {
+//         usernameForm.submit()
+//     })
 
-}
+// }
 
-if (window.location.pathname === '/chat') {
+
 
 
     form.addEventListener('submit', (event) => {
@@ -24,7 +24,7 @@ if (window.location.pathname === '/chat') {
         if (input.value) {
             socket.emit('message', {
                 message: input.value,
-                username: username
+               // username: username
             });
             input.value = '';
         }
@@ -32,7 +32,7 @@ if (window.location.pathname === '/chat') {
 
     socket.on('message', (msg) => {
         const item = document.createElement('li');
-        item.textContent = `${msg.username}: ${msg.message}`;
+        item.textContent = `${msg.message}`;
         messages.appendChild(item);
         window.scrollTo(0, document.body.scrollHeight);
     });
@@ -46,7 +46,7 @@ if (window.location.pathname === '/chat') {
 
     })
 
-}
+
 
 
 

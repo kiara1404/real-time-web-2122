@@ -20,19 +20,15 @@ app.use(express.static(path.resolve('public')))
 app.use(express.text());
 app.use(express.urlencoded({ extended: false }));
 app.get('/', getData)
-app.get('/chat', chat)
 
 
-function index(req, res) {
-    res.render('index')
-}
 
-function chat(req, res) {
-    const username = req.query.name
-    //  console.log(req.query.name)
-    // console.log(res)
-    res.render('chat', { username })
-}
+// function chat(req, res) {
+//     const username = req.query.name
+//     //  console.log(req.query.name)
+//     // console.log(res)
+//     res.render('chat', { username })
+// }
 
 
 io.on('connection', (socket) => {
@@ -40,10 +36,10 @@ io.on('connection', (socket) => {
     io.emit('connected', 'a  user has connected');
 
 
-    socket.on('send-username', (username) => {
-        console.log(socket.username)
-        socket.username = username;
-    });
+    // socket.on('send-username', (username) => {
+    //     console.log(socket.username)
+    //     socket.username = username;
+    // });
 
 
     socket.on('message', (message) => {

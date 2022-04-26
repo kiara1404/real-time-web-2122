@@ -1,7 +1,8 @@
 
 ## 📝 Concept
 
-## Data model
+## Data model API
+I am using the official [Marvel API](https://developer.marvel.com/)
 <img src="wiki/datamodel.png">
 
 

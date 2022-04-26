@@ -10,11 +10,11 @@ body {
   background: rgba(188, 105, 138, 0.5);
   background-image: radial-gradient(
       circle at bottom left,
-      rgba(255, 255, 0, 0.9),
-      rgba(255, 255, 0, 0) 70%
+      rgba(224, 36, 30, 0.9),
+      rgba(41, 83, 223, 0.9) 70%
     ),
     radial-gradient(circle at top left, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0) 70%),
-    radial-gradient(circle at center right, rgba(255, 0, 255, 0.8), rgba(255, 0, 255, 0) 50%);
+    radial-gradient(circle at center right, rgba(255, 251, 0, 0.8), rgba(255, 145, 0, 0) 50%);
   background-size: 200% 200%;
   animation: movement 30s ease infinite alternate-reverse;
 }
@@ -48,8 +48,8 @@ main {
 }
 
 section {
-  width: 20rem;
-  height: 30rem;
+  width: 40rem;
+  height: 60rem;
   /* background: rgb(239, 238, 238); */
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(1rem);
@@ -156,4 +156,8 @@ section form > button:active {
 
 .active{
   display: block;
+}
+
+section > img {
+  width: 20vw;
 }
