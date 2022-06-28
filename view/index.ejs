@@ -3,9 +3,10 @@
         <%- include('includes/imageBox.ejs') %>
     <section>
         <h1>Chat</h1>
+        <h2><%= userName %></h2>
         <ul></ul>
-        <p class="msg">A user has joined</p>
-        <p class=msg>A user has disconnected</p>
+        <p class="hide">A user has joined</p>
+        <p class=hide>A user has disconnected</p>
         <form id="chat">
             <input type="text" autocomplete="off">
             <button><span>Send</span></button>

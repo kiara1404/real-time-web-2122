@@ -1,9 +1,11 @@
-const fetch = require('cross-fetch');
-const crypto = require('crypto')
-require('dotenv').config()
+import fetch from 'cross-fetch';
+import crypto from 'crypto';
+import 'dotenv/config';
+import { io } from '../server';
+
 
 // fetch data
-async function fetchData(req, res) {
+export async function fetchData(req, res) {
 
     try {
         const API_KEY = process.env.API_KEY;
@@ -19,9 +21,7 @@ async function fetchData(req, res) {
 
         const randomElement = array[Math.floor(Math.random() * array.length)];
         console.log(randomElement)
-       // const username = req.query.name
-
-        res.render('index', { data: randomElement })
+    //    io.emit('new character', randomElement)
     }
     catch (err) {
         console.log(err)
@@ -29,6 +29,5 @@ async function fetchData(req, res) {
     }
 }
 
-module.exports = fetchData;
 
 // bron: https://www.raymondcamden.com/2014/02/02/Examples-of-the-Marvel-API
