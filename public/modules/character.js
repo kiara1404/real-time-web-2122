@@ -1,13 +1,14 @@
-const characterDiv = document.querySelector('main section')
+const characterDiv = document.querySelector('.imgbox')
 
 export const getNewCharacter = (data) => {
     const img = document.querySelector('img');
     if (img) {
         img.remove();
     }
-    const charcterImg = document.createElement('img');
+    const characterImg = document.createElement('img');
+    characterImg.src = data.url
         console.log(data)
-        characterDiv.appendChild(charcterImg);
-        console.log(charcterImg);
+        characterDiv.appendChild(characterImg);
+        console.log(characterImg);
     
 }

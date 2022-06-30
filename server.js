@@ -20,14 +20,20 @@ app.use(express.static(path.resolve('public')))
 app.use(express.text());
 app.use(express.urlencoded({ extended: false }));
 app.get('/', (req, res) => {
-    res.render('login', {randomElement})
+    res.render('login', { randomElement })
 })
-app.post('/', (req, res) => {
+app.get('/game', (req, res) => {
     const userName = req.query.userName;
+    // console.log(userName)
     res.render('index', { userName })
 })
+let characterData;
+let randomElement;
+let users = [];
+let game = 0;
 
- let randomElement;
+
+const characters = ['Thor', 'Punisher', 'Daredevil', 'Hulk', 'Deadpool', 'Captain America', 'Doctor Strange']
 
 const getData = async () => {
 
@@ -43,11 +49,16 @@ const getData = async () => {
         const response = await data.json()
         const array = response.data.results
 
-        const randomizeData = () => {
-            const randomCharacter = array[Math.floor(Math.random() * array.length)];
-            return randomCharacter
-        }
-        randomElement = randomizeData()
+        // filter data 
+        let newArray = array.filter(array => {
+            return characters.includes(array.name)
+        })
+
+        //randomize array
+        const sortingData = newArray.sort(() => .5 - Math.random())
+        console.log(sortingData.length)
+
+        randomElement = sortingData
     }
     catch (err) {
         console.log(err)
@@ -55,40 +66,64 @@ const getData = async () => {
     }
 }
 
-
-getData();
-
-let users = [];
-let round = 0;
-
-io.on('connection', (socket) => {
-    console.log(` a user connected`)
-    io.emit('connected', 'a  user has connected');
-
-    // let characterData = {
-    //     name: randomElement.name,
-    //     url: randomElement.thumbnail.path + '/portrait_incredible.' + randomElement.thumbnail.extension
-    // }
-    if(randomElement){
-        let characterData = {
-            name: randomElement.name,
-            url: randomElement.thumbnail.path + '/portrait_incredible.' + randomElement.thumbnail.extension
+getData()
+    .then(() => console.log('Loading the data..', randomElement[game].name))
+    .then(() => {
+        characterData = {
+            name: randomElement[game].name,
+            url: randomElement[game].thumbnail.path + '/portrait_incredible.' + randomElement[game].thumbnail.extension
         }
-        io.emit('new character', characterData)
-    }
-
-
-    socket.on('new client', (userName) => {
-        io.emit('new client', userName);
-        // storing user data to acces when someone disconnects
-        users.push({
-            username: userName,
-            // each client has their own socket.id
-            // I store this with the name, so I know who is leaving
-            id: socket.id
-        });
-
     })
+    .catch((err) => console.log(err))
+
+
+
+
+// setting up socket connection
+io.on('connection', (socket) => {
+    // global variable for connecting name
+    let userName;
+    io.emit('user connect', users);
+
+    // new user
+    socket.on('user connect', (username) => {
+        userName = username;
+        users.push(userName);
+        console.log(username)
+        io.emit('user connect', users)
+    })
+
+    // emmitting filtered data from api
+    io.emit('new character', characterData)
+
+    // answer
+    socket.on('answer', (answer) => {
+        const characterName = characterData.name;
+        const goodAnswer = characterData.name.toLowerCase();
+        const guess = answer.toLowerCase();
+
+        // if answer is correct
+        if (guess.includes(goodAnswer)) {
+            io.emit('good answer', characterName);
+
+            if (game >= randomElement.length - 1) {
+                game = 0;
+                getData()
+                    .then(() => console.log('round has ended'))
+            } else {
+                game = game + 1
+            }
+            characterData = {
+                name: randomElement[game].name,
+                url: randomElement[game].thumbnail.path + '/portrait_incredible.' + randomElement[game].thumbnail.extension
+            }
+            io.emit('new character', characterData)
+            console.log('good answer', game)
+        }
+    });
+
+
+
     socket.on('message', (message) => {
         io.emit('message', message)
     })
