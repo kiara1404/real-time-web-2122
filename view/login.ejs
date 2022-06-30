@@ -1,13 +1,15 @@
 <%- include('includes/head.ejs') %>
 <main class="login">
     <section>
-        <h2>Current users in game: <span>0</span>/10</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/1600px-Marvel_Logo.svg.png?20161025051221"
+            alt="marvel logo red white">
+            <h1>Guess the character</h1>
+            <p>Voordat je kan beginnen moet je een username invullen</p>
         <form action="/game" method="GET">
             <label for="userName">Username:</label>
             <input type="text" id="userName" name="userName" required />
-            <button>Begin a game</button>
+            <button>Begin</button>
         </form>
-        <h3 class="hide"><span>Sorry!</span> <br /> This username is already in use...</h3>
     </section>
 </main>
 

@@ -17,20 +17,14 @@ if (gamePage) {
             item.classList.add('joined-msg')
             item.textContent = `${userName} has joined!`;
             messages.appendChild(item);
-
-
         }
-
     })
-
-
-
+    // get new character
     socket.on('new character', (data) => {
         getNewCharacter(data)
     })
 
-
-
+    // chat messages
     socket.on('message', (msg) => {
         const item = document.createElement('li');
         item.textContent = `${msg.message}`;
@@ -62,5 +56,15 @@ if (gamePage) {
         messages.appendChild(item);
         window.scrollTo(0, document.body.scrollHeight);
 
+    })
+
+    socket.on('disconnect', userName => {
+        if (userName) {
+            console.log(userName)
+            const item = document.createElement('li');
+            item.classList.add('joined-msg')
+            item.textContent = `${userName} left!`;
+            messages.appendChild(item);
+        }
     })
 }

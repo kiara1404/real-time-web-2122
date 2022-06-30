@@ -162,9 +162,9 @@ section form > button:active {
   color: green;
 }
 
-section > img {
+/* section > img {
   width: 20vw;
-}
+} */
 .imgbox{
   overflow: hidden;
 
@@ -176,4 +176,22 @@ section > img {
 .joined-msg{
   font-style: italic;
   opacity: 0.5;
+}
+.login section {
+  overflow: hidden;
+}
+.login section img {
+  width: 100%;
+
+}
+.login section h1{
+  font-weight: 600;
+  font-size: 2rem;
+}
+.login section p {
+  margin-bottom: 2rem;
+}
+.login form button {
+  width: 6rem;
+  background-color: red;
 }
