@@ -3,7 +3,7 @@
 <img src="/wiki/Screenshot.png" width="800px">
 
 ## Live demo 💻
-Je kan de applicatie [hier](https://chatbox-kiki.herokuapp.com/) live bekijken
+You can check out the live demo [here](https://chatbox-kiki.herokuapp.com/)
 
 ## 3 < 1 concept
 For this course I had to think of three different ideas that implement realtime data with Socket.io and the use of an API.
@@ -25,29 +25,24 @@ I knew that there was an API for decks for cards, so I thought it would be cool 
 <img src="https://github.com/kiara1404/real-time-web-2122/blob/main/wiki/pesten.png" width="600px">
 
 
-## 👩‍🏫 Installation
-
+##  Installation ⚙️
+#### Clone repo
 ```
 $  git clone https://github.com/kiara1404/real-time-web-2122
 ```
 
-Install dependencies
+#### Install dependencies
 ```
 $ npm install
 ```
 
-Start application
+#### Start application
 
 ```
 $ npm start
 ```
 
-## External data source 💾
-I am using the official [Marvel API](https://developer.marvel.com/)
-<img src="wiki/datamodel.png">
-
-
-## Dependencies
+### Dependencies
 * [ExpressJS](https://expressjs.com/)
 * [ejs](https://www.npmjs.com/package/ejs)
 * [Dotenv](https://www.npmjs.com/package/dotenv)
@@ -55,15 +50,39 @@ I am using the official [Marvel API](https://developer.marvel.com/)
 * [socket.io](https://www.npmjs.com/package/socket.io)
 
 
+## External data source 💾
+I am using the official [Marvel API](https://developer.marvel.com/). You have to request an official API key for developers by creating an account but you'll receive the key quite easily. 
+<img src="wiki/datamodel.png">
+
+## Real time events ⏰
+### Connection
+This event is the main event. It's performs when a user makes a new connection with the server. This is the connection with the socket.
+
+### User connect
+This event gets triggered when a new user is connecting with the game. It sends the username and triggers a join message with the username so everyone in the game can see who joined.
+
+### Message
+This event is performed when a user wants to send a message in the chat, this can be to chat with others or to guess the answer for the game.
+
+### Get data ( new character )
+This events gets triggered when the user enters the chat after sending their username. The marvel API data will be collected and filtered and a random item from the array will be shown.
+It gets triggered again after the former question gets answered right.
+
+### Answer
+When a user is attempting to guess the right answer, this event gets triggered. When a chat message is send, it will be checked if the message contains the right answer. If this is the case, another message will be shown saying the right answer has been given.
+
+### User left
+This event gets performed when a user leaves. It makes sure a message is sent that a user has left (with their username).
 
 
-## Socket.io
+## Data management
+
+## Data lifecycle
+
 
 ## ⚖ License
-
 [MIT](https://github.com/kiara1404/real-time-web-2122/blob/main/LICENSE)
 
 
-## ✍ Authors
-
+## ✍ Author
 - [@kiara1404](https://github.com/kiara1404)

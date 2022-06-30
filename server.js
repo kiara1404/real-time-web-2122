@@ -32,7 +32,6 @@ app.get('/game', (req, res) => {
 // global variables
 let characterData;
 let randomElement;
-let users = [];
 let game = 0;
 
 // array with characters that are well known
@@ -87,17 +86,10 @@ getData()
 // setting up socket connection
 io.on('connection', (socket) => {
 
-    socket.on('user connect', (userName) => {
-        io.emit('user connect', { username })
-        console.log(username)
-    });
-
-    users.push({
-        username: username
-    });
-    // global variable for connecting name
+    // user connect to send username
     io.emit('user connect', (username));
     console.log('user connected')
+
 
     // emmitting filtered data from api
     io.emit('new character', characterData)
@@ -139,7 +131,7 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         io.emit('user left', { username })
         console.log(username)
-        users.splice(username)
+
     });
 
 })

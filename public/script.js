@@ -4,8 +4,7 @@ const socket = io()
 let messages = document.querySelector('section ul')
 let form = document.querySelector('#chat')
 let gamePage = document.querySelector('.game')
-const answerInput = document.querySelector('#answerInput')
-
+const answerInput = document.querySelector('#answerInput');
 
 
 if (gamePage) {
