@@ -75,10 +75,8 @@ When a user is attempting to guess the right answer, this event gets triggered. 
 This event gets performed when a user leaves. It makes sure a message is sent that a user has left (with their username).
 
 
-## Data management
-
 ## Data lifecycle
-
+<img src="/wiki/lifecycle.png" width="800px">
 
 ## ⚖ License
 [MIT](https://github.com/kiara1404/real-time-web-2122/blob/main/LICENSE)
