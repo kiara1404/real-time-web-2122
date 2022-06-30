@@ -58,13 +58,18 @@ if (gamePage) {
 
     })
 
-    socket.on('disconnect', userName => {
-        if (userName) {
+    socket.on('user left', userName => {
+        if (userName === 'transport close') {
+            const item = document.createElement('li');
+            item.classList.add('joined-msg')
+            item.textContent = `a user has disconnected`;
+        } else {
             console.log(userName)
             const item = document.createElement('li');
             item.classList.add('joined-msg')
-            item.textContent = `${userName} left!`;
+            item.textContent = `${userName.username} left!`;
             messages.appendChild(item);
+
         }
     })
 }

@@ -137,8 +137,11 @@ io.on('connection', (socket) => {
     })
 
     socket.on('disconnect', () => {
-        console.log('user disconnected')
-    })
+        io.emit('user left', { username })
+        console.log(username)
+        users.splice(username)
+    });
+
 })
 
 io.emit()
