@@ -1,11 +1,9 @@
 
-## 📝 Concept
+# Real time web
+<img src="/wiki/Screenshot.png" width="800px">
 
-## Data model API
-I am using the official [Marvel API](https://developer.marvel.com/)
-<img src="wiki/datamodel.png">
-
-
+## Live demo 💻
+Je kan de applicatie [hier](https://chatbox-kiki.herokuapp.com/) live bekijken
 
 ## 3 < 1 concept
 For this course I had to think of three different ideas that implement realtime data with Socket.io and the use of an API.
@@ -25,6 +23,8 @@ I knew that there was an API for decks for cards, so I thought it would be cool 
 * Every player gets zeven cards and all the leftover cards will be in the pile on the table.
 * The goal of the game is to lose your cards as soon as possible but there are certain rules when you can play a card away.
 <img src="https://github.com/kiara1404/real-time-web-2122/blob/main/wiki/pesten.png" width="600px">
+
+
 ## 👩‍🏫 Installation
 
 ```
@@ -42,21 +42,19 @@ Start application
 $ npm start
 ```
 
-Nodemon
+## External data source 💾
+I am using the official [Marvel API](https://developer.marvel.com/)
+<img src="wiki/datamodel.png">
 
-```
-$ npm run dev
-```
 
 ## Dependencies
-
 * [ExpressJS](https://expressjs.com/)
 * [ejs](https://www.npmjs.com/package/ejs)
 * [Dotenv](https://www.npmjs.com/package/dotenv)
+* [cross-fetch](https://www.npmjs.com/package/cross-fetch)
+* [socket.io](https://www.npmjs.com/package/socket.io)
 
 
-### Dev dependencies
-* [Nodemon](https://www.npmjs.com/package/nodemon)
 
 
 ## Socket.io
