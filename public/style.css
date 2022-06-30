@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Helvetica, Arial, sans-serif;
+  font-size: 1rem; 
   overflow: hidden;
   min-height: 100vh;
   min-width: 100vw;
@@ -94,7 +95,6 @@ section ul {
 
 section ul > li {
   padding: 0.5rem 1rem;
-  font-size: 0.8rem;
 }
 
 section form {
@@ -157,7 +157,23 @@ section form > button:active {
 .active{
   display: block;
 }
+.good-answer{
+  font-size: 1.3rem;
+  color: green;
+}
 
 section > img {
   width: 20vw;
+}
+.imgbox{
+  overflow: hidden;
+
+}
+.imgbox img{
+  width: 100%;
+    filter: blur(0.7rem);
+}
+.joined-msg{
+  font-style: italic;
+  opacity: 0.5;
 }
